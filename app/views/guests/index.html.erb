@@ -23,24 +23,26 @@
 </head>
 <body>
 
-	<div class="limiter">
-		<div class="wrap-table100">
-				<div class="table">
 
-					<div class="row">
-						<div class="cell" "col-sm-5"><h1> Total Users: <%= @guest.count%> </h1>
-						<div class="cell" "col-sm-7">
-						<a href="#" class="btn"><i class="material-icons"></i> <span>Export to Excel</span></a>
-						<a href="#" class="btn"><i class="material-icons"></i> <span>Add New User</span></a>
-						 </div>
-						</div>
-					</div>
-					</div>
-				</div>
-			</div>
 
 		<div class="container-table100">
 			<div class="wrap-table100">
+
+			<div class="table">
+
+			<div class="row ">
+				<div class="cell"><h1> Total Users: <%= @guest.count%> </h1>
+				<div class="cell">
+				<a href="#" class="btn"> <span>Export to Excel</span></a>
+				<a href="/guests/new" class="btn"><i class="material-icons"></i> <span>Add User</span></a>
+				 </div>
+				</div>
+			</div>
+		</div>
+
+			</div>
+			<div class="wrap-table100">
+
 					<div class="table">
 
 						<div class="row header">

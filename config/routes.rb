@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
 
   post '/guests', to: 'guests#create', as: 'guests_creation'
-
+  get '/', to: 'guests#new'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
