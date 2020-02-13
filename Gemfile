@@ -14,7 +14,10 @@ gem 'bootstrap', '~> 4.3', '>= 4.3.1'
 
 gem 'pry', '~> 0.12.2'
 # gem 'therubyracer', platforms: :ruby
-
+# Use faraday to make Api calls
+gem 'faraday'
+#Use require_all to helps include files in a program
+gem 'require_all'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks

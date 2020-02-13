@@ -1,9 +1,7 @@
 Rails.application.routes.draw do
-  resources :guests, only: [:index,:new]
-
-
+  get '/', to: 'searches#search'
   post '/guests', to: 'guests#create', as: 'guests_creation'
-  get '/', to: 'guests#new'
+  get '/guests', to: 'guests#new'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
