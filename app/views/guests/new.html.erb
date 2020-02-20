@@ -23,7 +23,7 @@
                     <div class="signup-form">
                         <h2 class="form-title">Guest Sign Up</h2>
 
-                        <form  action="<%= guests_path %>" method="POST" class="register-form" id="register-form" >
+                        <form  action="<%="localhost/300" %>" method="POST" class="register-form" id="register-form" >
                                                    <div class="form-group">
                                                        <label for="first_name"><i class="zmdi zmdi-account material-icons-name"></i></label>
                                                        <input type="text" name="guest[first_name]" id="first_name" placeholder="Your First Name"/>
@@ -44,7 +44,7 @@
                                                    <div class="form-group form-button">
                                                        <input type="submit" name="signup" id="signup" class="form-submit" value="Register"/>
                                                        <!-- need to replace https:... with a more abstack solution -->
-                                                       <input type="button" onclick="window.location.href = 'https://nya-art.herokuapp.com<%= guests_path %>';" class="form-submit" value="View list" />
+                                                       <input type="button" onclick="window.location.href = 'https://nya-art.herokuapp.com<%=  %>';" class="form-submit" value="View list" />
 
                                                    </div>
 
