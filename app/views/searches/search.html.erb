@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8" />
-        <title> | Apply - Bootstrap 4 Web Application</title>
+        <title> | BlockcoinX - Crypto Web Application</title>
         <meta name="description" content="Responsive, Bootstrap, BS4" />
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimal-ui" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -27,14 +27,12 @@
             <div class="navbar navbar-expand-lg">
                 <!-- Page title -->
                 <!-- brand -->
-                <a href="index.html" class="navbar-brand">
+                <a href="#home" class="navbar-brand">
                     <svg viewBox="0 0 24 24" height="28" width="28" xmlns="http://www.w3.org/2000/svg">
                         <path d="M0 0h24v24H0z" fill="none" />
                         <path d="M19.51 3.08L3.08 19.51c.09.34.27.65.51.9.25.24.56.42.9.51L20.93 4.49c-.19-.69-.73-1.23-1.42-1.41zM11.88 3L3 11.88v2.83L14.71 3h-2.83zM5 3c-1.1 0-2 .9-2 2v2l4-4H5zm14 18c.55 0 1.05-.22 1.41-.59.37-.36.59-.86.59-1.41v-2l-4 4h2zm-9.71 0h2.83L21 12.12V9.29L9.29 21z"
                         fill="#fff" class="" />
                     </svg>
-                    <img src="../assets/images/logo.png" alt="." class="hide">
-                    <span class="hidden-folded d-inline">BX</span>
                 </a>
                 <!-- / brand -->
                 <ul class="nav flex-row order-lg-2">
@@ -55,22 +53,17 @@
                 <div class="collapse navbar-collapse  order-lg-1" id="navbarToggler">
                     <ul class="navbar-nav mt-2 mt-lg-0 mx-0 mx-lg-2 ">
                         <li class="nav-item">
-                            <a href="dashboard.9.html" class="nav-link">
+                            <a href="#prices" class="nav-link">
                                 Prices
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="#news" class="nav-link">
                                 News
                             </a>
 
                         </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                Dashboard
-                            </a>
 
-                        </li>
                     </ul>
 
                 </div>
@@ -93,12 +86,12 @@
                                 <div class="d-sm-flex align-items-center">
                                     <div class="d-flex align-items-center">
 
-                                        <div class="mx-2">
+                                        <div id="home" class="mx-2">
                                             <span class="text-lg _700">
 					    	BlockCoin X <span class="text-muted text-sm">inc</span>
                                             </span>
                                             <div>
-                                                <a href="#" class="mr-1">The best place for crypto news</a>
+                                                <a href="#" class="mr-1">The best place for crypto news and market data</a>
 
                                             </div>
                                         </div>
@@ -162,7 +155,7 @@
                             </div>
 
                             <div class="box">
-                                <div class="box-header">
+                                <div id ="prices" class="box-header">
                                     <h2>LeaderBoard</h2>
                                 </div>
                                 <div class="p-2">
@@ -190,53 +183,55 @@
                                               <!-- PNext refactor: We need to give the task of changing the color to front end instead of model -->
                                               <!-- PNext refactor: We need to add + and - to the changes -->
                                               <!-- PNrewrite a loop for when we need to add the next 100 crypto Cryptocurrency -->
+                                              <!-- is it wise to write interger formating function on the view? -->
+                                              <!-- need a recursion function to make this more readable when I have more time -->
 
 
                                                 <td>Bitcoin</td>
-                                                <td class="<%=@crypto.color(@crypto.bitcoin[:change_usd])%>"> $<%=@crypto.bitcoin[:price]%> </td>
-                                                <td class="<%=@crypto.color(@crypto.bitcoin[:change_usd])%>"> $<%=@crypto.bitcoin[:change_usd]%> </td>
+                                                <td class="text-muted" class="<%=@crypto.bitcoin[:change_usd]%>"> <%=number_to_currency(@crypto.bitcoin[:price])%> </td>
+                                                <td class="<%=@crypto.color(@crypto.bitcoin[:change_usd])%>"> <%=number_to_currency(@crypto.bitcoin[:change_usd])%> </td>
                                                 <td class="<%=@crypto.color(@crypto.bitcoin[:change_usd])%>"> % <%=@crypto.bitcoin[:change_percent]%> </td>
                                             </tr>
                                             <tr>
-                                              <td>Ethereum</td>
-                                              <td class="<%=@crypto.color(@crypto.ethereum[:change_usd])%>"> $<%=@crypto.ethereum[:price]%> </td>
-                                              <td class="<%=@crypto.color(@crypto.ethereum[:change_usd])%>" > $<%=@crypto.ethereum[:change_usd]%> </td>
+                                              <td >Ethereum</td>
+                                              <td class="text-muted" class="<%=@crypto.ethereum[:change_usd]%>"><%= number_to_currency(@crypto.ethereum[:price])%> </td>
+                                              <td class="<%=@crypto.color(@crypto.ethereum[:change_usd])%>" > <%=number_to_currency(@crypto.ethereum[:change_usd])%> </td>
                                               <td class="<%=@crypto.color(@crypto.ethereum[:change_usd])%>">  % <%=@crypto.ethereum[:change_percent]%>   </td>
                                             </tr>
                                             <tr>
                                               <td>XRP</td>
-                                              <td class="<%=@crypto.color(@crypto.xrp[:change_usd])%>">      $<%=@crypto.xrp[:price]%> </td>
-                                              <td class="<%=@crypto.color(@crypto.xrp[:change_usd])%>">      $<%=@crypto.xrp[:change_usd]%> </td>
+                                              <td class="text-muted" class="<%=@crypto.xrp[:change_usd]%>">                      <%=number_to_currency(@crypto.xrp[:price])%> </td>
+                                              <td class="<%=@crypto.color(@crypto.xrp[:change_usd])%>">      <%=number_to_currency(@crypto.xrp[:change_usd])%> </td>
                                               <td class="<%=@crypto.color(@crypto.xrp[:change_usd])%>">      % <%=@crypto.xrp[:change_percent]%>  </td>
                                             </tr>
                                             <tr>
                                               <td>Bitcoin Cash</td>
-                                              <td class="<%=@crypto.color(@crypto.bitcoin_cash[:change_usd])%>">      $<%=@crypto.bitcoin_cash[:price]%> </td>
-                                              <td class="<%=@crypto.color(@crypto.bitcoin_cash[:change_usd])%>">      $<%=@crypto.bitcoin_cash[:change_usd]%> </td>
-                                              <td class="<%=@crypto.color(@crypto.bitcoin_cash[:change_usd])%>">      % <%=@crypto.bitcoin_cash[:change_percent]%>  </td>
+                                              <td class="text-muted" class="<%=@crypto.bitcoin_cash[:change_usd]%>">    <%=number_to_currency(@crypto.bitcoin_cash[:price])%> </td>
+                                              <td class="<%=@crypto.color(@crypto.bitcoin_cash[:change_usd])%>">      <%=number_to_currency(@crypto.bitcoin_cash[:change_usd])%> </td>
+                                              <td class="<%=@crypto.color(@crypto.bitcoin_cash[:change_usd])%>">      %<%=@crypto.bitcoin_cash[:change_percent]%>  </td>
                                             </tr>
                                             <tr>
                                               <td>Bitcoin SV</td>
-                                              <td class="<%=@crypto.color(@crypto.bitcoin_sv[:change_usd])%>">      $<%=@crypto.bitcoin_sv[:price]%> </td>
-                                              <td class="<%=@crypto.color(@crypto.bitcoin_sv[:change_usd])%>">      $<%=@crypto.bitcoin_sv[:change_usd]%> </td>
-                                              <td class="<%=@crypto.color(@crypto.bitcoin_sv[:change_usd])%>">      % <%=@crypto.bitcoin_sv[:change_percent]%>  </td>
+                                              <td class="text-muted" class="<%=@crypto.bitcoin_sv[:change_usd]%>">   <%=number_to_currency(@crypto.bitcoin_sv[:price])%> </td>
+                                              <td class="<%=@crypto.color(@crypto.bitcoin_sv[:change_usd])%>">      <%=number_to_currency(@crypto.bitcoin_sv[:change_usd])%> </td>
+                                              <td class="<%=@crypto.color(@crypto.bitcoin_sv[:change_usd])%>">      %<%=@crypto.bitcoin_sv[:change_percent]%>  </td>
                                             </tr>
                                             <tr>
                                               <td>Litecoin</td>
-                                              <td class="<%=@crypto.color(@crypto.litecoin[:change_usd])%>">      $<%=@crypto.litecoin[:price]%> </td>
-                                              <td class="<%=@crypto.color(@crypto.litecoin[:change_usd])%>">      $<%=@crypto.litecoin[:change_usd]%> </td>
-                                              <td class="<%=@crypto.color(@crypto.litecoin[:change_usd])%>">      % <%=@crypto.litecoin[:change_percent]%>  </td>
+                                              <td class="text-muted" class="<%=@crypto.litecoin[:change_usd]%>">      <%=number_to_currency(@crypto.litecoin[:price])%> </td>
+                                              <td class="<%=@crypto.color(@crypto.litecoin[:change_usd])%>">      <%=number_to_currency(@crypto.litecoin[:change_usd])%> </td>
+                                              <td class="<%=@crypto.color(@crypto.litecoin[:change_usd])%>">      %<%=@crypto.litecoin[:change_percent]%>  </td>
                                             </tr>
                                             <tr>
                                               <td>Tether</td>
-                                              <td class="<%=@crypto.color(@crypto.tether[:change_usd])%>">      $<%=@crypto.tether[:price]%> </td>
-                                              <td class="<%=@crypto.color(@crypto.tether[:change_usd])%>">      $<%=@crypto.tether[:change_usd]%> </td>
+                                              <td class="text-muted" class="<%=@crypto.tether[:change_usd]%>">      <%=number_to_currency(@crypto.tether[:price])%> </td>
+                                              <td class="<%=@crypto.color(@crypto.tether[:change_usd])%>">      <%=number_to_currency(@crypto.tether[:change_usd])%> </td>
                                               <td class="<%=@crypto.color(@crypto.tether[:change_usd])%>">      % <%=@crypto.tether[:change_percent]%>  </td>
                                             </tr>
                                             <tr>
                                               <td>Eos</td>
-                                              <td class="<%=@crypto.color(@crypto.eos[:change_usd])%>">      $<%=@crypto.eos[:price]%> </td>
-                                              <td class="<%=@crypto.color(@crypto.eos[:change_usd])%>">      $<%=@crypto.eos[:change_usd]%> </td>
+                                              <td class="text-muted" class="<%=@crypto.eos[:change_usd]%>">      <%=number_to_currency(@crypto.eos[:price])%> </td>
+                                              <td class="<%=@crypto.color(@crypto.eos[:change_usd])%>">      <%=number_to_currency(@crypto.eos[:change_usd])%> </td>
                                               <td class="<%=@crypto.color(@crypto.eos[:change_usd])%>">      % <%=@crypto.eos[:change_percent]%>  </td>
                                             </tr>
                                         </tbody>
@@ -244,29 +239,25 @@
                                 </div>
 
                             </div>
-                            <h4> News Feed <h4>
-                            <div class="row no-gutters box">
-                                <div>
-                                    <div class="padding">
-                                        <h5>Sales Statistical Overview</h5>
-                                        <p class="text-muted my-2">Sale information on advertising, exhibitions, market research, online media, customer desires, PR and much moreorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
-                                        <p>
-                                        <a href="#" class="btn btn-sm btn-rounded success theme">Update</a>
-                                    </div>
-                                </div>
+                            <h4> Latest News Feed <h4>
+                              <!-- ############ NEW feeds-->
 
-                            </div>
-                            <div class="row no-gutters box">
-                                <div>
-                                    <div class="padding">
-                                        <h4>Bitcoin is on Bull Run</h4>
-                                        <p class="text-muted my-3">Sale information on advertising, exhibitions, market research, online media, customer desires, PR and much moreorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
-                                        <p>
-                                        <a href="#" class="btn btn-sm btn-rounded success theme">Update</a>
-                                    </div>
-                                </div>
+                              <% x = 0 %>
+                              <% while x<=10 %>
+                                        <div id = "news" class="row no-gutters box">
+                                            <div>
+                                                <div class="padding">
+                                                   <a href= "<%=@news_body["Data"][x]["url"]%>"class="_600"> <%= @news_body["Data"][x]["title"] %></a>
+                                                   <p class="text-muted my-3"><%=@news_body["Data"][x]["body"]%></p>
+                                                   <a href="<%=@news_body["Data"][x]["url"]%>" class="btn btn-xs white">Read More</a>
+                                                   <%x+= 1%>
+                                                </div>
+                                            </div>
+                                         </div>
+                               <% end %>
+                 <!-- ############ NEW feeds-->
 
-                            </div>
+
                             </div>
                         </div>
                     </div>
@@ -283,142 +274,7 @@
             <!-- ############ Content END-->
             <!-- ############ LAYOUT END-->
         </div>
-        <!-- ############ SWITHCHER START-->
-        <div id="setting" class="">
-            <div class="setting dark-white rounded-bottom" id="theme">
-                <a href="#" data-toggle-class="active" data-target="#theme" class="dark-white toggle">
-                    <i class="fa fa-gear text-primary fa-spin"></i>
-                </a>
-                <div class="box-header">
-                    <a href="https://themeforest.net/item/apply-web-application-admin-template/21072584?ref=flatfull" class="btn btn-xs rounded danger float-right">BUY</a>
-                    <strong>Theme Switcher</strong>
-                </div>
-                <div class="box-divider"></div>
-                <div class="box-body">
-                    <p id="settingLayout">
-                        <label class="md-check my-1 d-block">
-                            <input type="checkbox" name="fixedAside">
-                            <i></i>
-                            <span>Fixed Aside</span>
-                        </label>
-                        <label class="md-check my-1 d-block">
-                            <input type="checkbox" name="fixedContent">
-                            <i></i>
-                            <span>Fixed Content</span>
-                        </label>
-                        <label class="md-check my-1 d-block">
-                            <input type="checkbox" name="folded">
-                            <i></i>
-                            <span>Folded Aside</span>
-                        </label>
-                        <label class="md-check my-1 d-block">
-                            <input type="checkbox" name="container">
-                            <i></i>
-                            <span>Boxed Layout</span>
-                        </label>
-                        <label class="md-check my-1 d-block">
-                            <input type="checkbox" name="ajax">
-                            <i></i>
-                            <span>Ajax load page</span>
-                        </label>
-                        <label class="pointer my-1 d-block" data-toggle="fullscreen" data-plugin="fullscreen" data-target="fullscreen">
-                            <span class="ml-1 mr-2 auto">
-            <i class="fa fa-expand d-inline"></i>
-            <i class="fa fa-compress d-none"></i>
-          </span>
-                            <span>Fullscreen mode</span>
-                        </label>
-                    </p>
-                    <p>Colors:</p>
-                    <p>
-                        <label class="radio radio-inline m-0 mr-1 ui-check ui-check-color">
-                            <input type="radio" name="theme" value="primary">
-                            <i class="primary"></i>
-                        </label>
-                        <label class="radio radio-inline m-0 mr-1 ui-check ui-check-color">
-                            <input type="radio" name="theme" value="accent">
-                            <i class="accent"></i>
-                        </label>
-                        <label class="radio radio-inline m-0 mr-1 ui-check ui-check-color">
-                            <input type="radio" name="theme" value="warn">
-                            <i class="warn"></i>
-                        </label>
-                        <label class="radio radio-inline m-0 mr-1 ui-check ui-check-color">
-                            <input type="radio" name="theme" value="info">
-                            <i class="info"></i>
-                        </label>
-                        <label class="radio radio-inline m-0 mr-1 ui-check ui-check-color">
-                            <input type="radio" name="theme" value="success">
-                            <i class="success"></i>
-                        </label>
-                        <label class="radio radio-inline m-0 mr-1 ui-check ui-check-color">
-                            <input type="radio" name="theme" value="warning">
-                            <i class="warning"></i>
-                        </label>
-                        <label class="radio radio-inline m-0 mr-1 ui-check ui-check-color">
-                            <input type="radio" name="theme" value="danger">
-                            <i class="danger"></i>
-                        </label>
-                    </p>
-                    <div class="row no-gutters">
-                        <div class="col">
-                            <p>Brand</p>
-                            <p>
-                                <label class="radio radio-inline m-0 mr-1 ui-check">
-                                    <input type="radio" name="brand" value="dark-white">
-                                    <i class="light"></i>
-                                </label>
-                                <label class="radio radio-inline m-0 mr-1 ui-check ui-check-color">
-                                    <input type="radio" name="brand" value="dark">
-                                    <i class="dark"></i>
-                                </label>
-                            </p>
-                        </div>
-                        <div class="col mx-2">
-                            <p>Aside</p>
-                            <p>
-                                <label class="radio radio-inline m-0 mr-1 ui-check">
-                                    <input type="radio" name="aside" value="white">
-                                    <i class="light"></i>
-                                </label>
-                                <label class="radio radio-inline m-0 mr-1 ui-check ui-check-color">
-                                    <input type="radio" name="aside" value="dark">
-                                    <i class="dark"></i>
-                                </label>
-                            </p>
-                        </div>
-                        <div class="col">
-                            <p>Themes</p>
-                            <div class="clearfix">
-                                <label class="radio radio-inline ui-check">
-                                    <input type="radio" name="bg" value="">
-                                    <i class="light"></i>
-                                </label>
-                                <label class="radio radio-inline ui-check ui-check-color">
-                                    <input type="radio" name="bg" value="dark">
-                                    <i class="dark"></i>
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <p>Demos</p>
-                    <div class="text-md">
-                        <a href="dashboard.html?folded=false&amp;bg=&amp;aside=dark&amp;brand=dark" class="no-ajax badge light">0</a>
-                        <a href="dashboard.1.html?folded=false&amp;bg=&amp;aside=dark&amp;brand=dark-white" class="no-ajax badge light">1</a>
-                        <a href="dashboard.2.html?folded=false&amp;bg=&amp;aside=dark&amp;brand=white" class="no-ajax badge light">2</a>
-                        <a href="dashboard.3.html?folded=false&amp;bg=&amp;aside=white&amp;brand=white" class="no-ajax badge light">3</a>
-                        <a href="dashboard.4.html?folded=true&amp;bg=&amp;aside=dark" class="no-ajax badge light">4</a>
-                        <a href="dashboard.5.html?folded=true&amp;bg=&amp;aside=dark&amp;brand=dark" class="no-ajax badge light">5</a>
-                        <a href="dashboard.6.html?folded=false&amp;bg=&amp;aside=white&amp;brand=white" class="no-ajax badge light">6</a>
-                        <a href="dashboard.7.html?folded=false&amp;bg=&amp;aside=dark&amp;brand=dark" class="no-ajax badge light">7</a>
-                        <a href="dashboard.8.html?folded=false&amp;bg=&amp;aside=white&amp;brand=white" class="no-ajax badge light">8</a>
-                        <a href="dashboard.9.html?bg=&amp;" class="no-ajax badge light">9</a>
-                        <a href="rtl.html?folded&amp;bg=" class="no-ajax badge light">RTL</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- ############ SWITHCHER END-->
+
         <!-- build:js ../assets/js/app.min.js -->
         <!-- jQuery -->
         <script src="../libs/jquery/dist/jquery.min.js"></script>

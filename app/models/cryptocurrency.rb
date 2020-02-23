@@ -42,7 +42,7 @@ def bitcoin_sv
       @bitcoin_sv_data = {
                             price: @api_hash["RAW"]["BSV"]["USD"]["PRICE"],
                             change_usd: @api_hash["RAW"]["BSV"]["USD"]["CHANGE24HOUR"].round(2),
-                            change_Percent: @api_hash["RAW"]["BSV"]["USD"]["CHANGEPCT24HOUR"].round(2)
+                            change_percent: @api_hash["RAW"]["BSV"]["USD"]["CHANGEPCT24HOUR"].round(2)
                          }
 end
 
