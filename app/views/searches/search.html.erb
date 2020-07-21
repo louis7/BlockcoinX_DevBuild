@@ -259,19 +259,29 @@
                             </div>
                             <h4> Latest News Feed <h4>
                               <!-- ############ NEW feeds-->
+                              <h4> React <h4>
 
+                                <%= react_component 'News', {prerender: true} %>
                               <% x = 0 %>
-                              <% while x<=10 %>
-                                        <div id = "news" class="row no-gutters box">
-                                            <div>
-                                                <div class="padding">
-                                                   <a href= "<%=@news_body["Data"][x]["url"]%>"class="_600"> <%= @news_body["Data"][x]["title"] %></a>
-                                                   <p class="text-muted my-3"><%=@news_body["Data"][x]["body"]%></p>
-                                                   <a href="<%=@news_body["Data"][x]["url"]%>" class="btn btn-xs white">Read More</a>
-                                                   <%x+= 1%>
+                              <% while x<=40 %>
+                                        <div class="row no-gutters p-2 box">
+
+                                                  <div class= "col-md-2 p-2 ">
+                                                <a href="#"><img src="<%= @news_body["Data"][x]["imageurl"]%>" class=" float-left img-fluid rounded-sm" alt="..."></a>
+                                                  </div>
+                                                  <div class="col-md-10 p-2">
+
+                                                  <a href="<%=@news_body["Data"][x]["url"]%>" class="text-primary mr-2 _600"><%= @news_body["Data"][x]["title"] %></a>
+                                                  <div class="p-1">
+                                                  <small class="font-weight-light my-1 "><%=@news_body["Data"][x]["body"]%>
+                                                            </small>
+                                                 </div>
+                                                 <div class="row">
+                                        <span class="badge text-sm  text-left text-warning pl-3 col">   <%=time_ago_in_words(@news_body["Data"][x]["published_on"])%> ago</span>
+                                        <%x+=1%>
+                                        </div>
                                                 </div>
-                                            </div>
-                                         </div>
+                                        </div>
                                <% end %>
                  <!-- ############ NEW feeds-->
 

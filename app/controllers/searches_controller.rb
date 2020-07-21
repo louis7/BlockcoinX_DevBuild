@@ -1,5 +1,5 @@
 require 'require_all'
-
+require 'pry';
 class SearchesController < ApplicationController
 
 
@@ -11,11 +11,11 @@ class SearchesController < ApplicationController
 
      @body = JSON.parse(@resp.body)
      @news_body = JSON.parse(@news_resp.body)
-
+#binding.pry
 
         if @resp.success?
             @crypto = Cryptocurrency.new(@body)
-            
+
           else
            @error = @body["meta"]["errorDetail"]
         end
