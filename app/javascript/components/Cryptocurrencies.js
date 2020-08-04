@@ -16,7 +16,7 @@ render () {
 
     <div className="box p-3 white">
         <div className="py-2 text-sm text-primary">
-            1,042 <span className="text-muted">Coins</span>
+              {this.props.total} <span className="text-muted">coins</span>
         </div>
         <div className="d-flex">
             <span className="flex text-muted">Total Currencies</span>

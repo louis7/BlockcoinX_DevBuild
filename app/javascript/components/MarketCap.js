@@ -16,7 +16,7 @@ render () {
 
     <div className="box p-3 white">
         <div className="py-2 text-sm text-success">
-            100,399,300,042 <span className="text-muted">USD</span>
+            {this.props.total} <span className="text-muted">usd</span>
         </div>
         <div className="d-flex">
             <span className="flex text-muted">Total Market Cap</span>
