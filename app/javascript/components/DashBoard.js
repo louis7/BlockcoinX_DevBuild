@@ -25,6 +25,10 @@ class DashBoard extends React.Component {
 
 componentDidMount() {
 
+  let format = (number)=>{
+     let format_number  = number.toFixed()
+    return Number(format_number).toLocaleString()
+  }
 
   let url= 'https:pro-api.coinmarketcap.com/v1/global-metrics/quotes/latest'
   let config = {
@@ -35,13 +39,14 @@ componentDidMount() {
             }
     axios.get(url, config)
       .then(res => {
+
         this.setState({
           isLoaded: true,
           items: res,
-          curentMarketCap: res.data.data.quote.USD.total_market_cap,
-          totalCurrencies: res.data.data.total_cryptocurrencies,
-          Dominance:       res.data.data.btc_dominance,
-          tradingVolume:   res.data.data.quote.USD.total_volume_24h
+          curentMarketCap: format(res.data.data.quote.USD.total_market_cap),
+          totalCurrencies: format(res.data.data.total_cryptocurrencies),
+          Dominance:       (res.data.data.btc_dominance).toFixed(2),
+          tradingVolume:   format(res.data.data.quote.USD.total_volume_24h)
            });
       })
   }
