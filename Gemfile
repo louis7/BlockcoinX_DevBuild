@@ -49,17 +49,17 @@ group :development, :test do
 
 
 end
-
-group :development do
+# for development do not include the sping gem.
+#group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 #  gem 'spring'
-gem 'sqlite3', '~> 1.4', '>= 1.4.2'
+#gem 'sqlite3', '~> 1.4', '>= 1.4.2'
 
-end
+#end
 #for heroku environement
 group :production do
-    #  gem 'pg'
+     gem 'pg'
 end
 #testing
