@@ -61,6 +61,6 @@ end
 #for heroku environement and deployment
 
 group :production do
-  gem 'pg', '~> 0.18'
+gem 'pg', '~> 1.2', '>= 1.2.3'
 end
 #testing
