@@ -58,7 +58,8 @@ end
 #gem 'sqlite3', '~> 1.4', '>= 1.4.2'
 
 #end
-#for heroku environement
+#for heroku environement and deployment
+
 group :production do
   gem 'pg', '~> 0.18'
 end
