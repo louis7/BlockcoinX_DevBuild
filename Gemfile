@@ -1,13 +1,18 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+
 gem 'rails', '~> 6.0', '>= 6.0.3.2'
 # Use SCSS for stylesheets
 #Render components in views or controller actions.
 gem 'react-rails', '~> 2.6', '>= 2.6.1'
 # Use Webpack to manage app-like JavaScript modules in Rails || run rails webpacker:install
 gem 'webpacker', '~> 5.1', '>= 5.1.1'
-
+# alternative to Faraday
+gem 'httparty', '~> 0.18.1'
+# helps with the cors issue
+gem 'rack-cors', '~> 1.1', '>= 1.1.1'
+# allows us to render Jason
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
@@ -50,17 +55,17 @@ group :development, :test do
 
 end
 # for development do not include the sping gem.
-#group :development do
+group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 #  gem 'spring'
-#gem 'sqlite3', '~> 1.4', '>= 1.4.2'
+gem 'sqlite3', '~> 1.4', '>= 1.4.2'
 
-#end
+end
 #for heroku environement and deployment
 
 group :production do
-gem 'pg', '~> 1.2', '>= 1.2.3'
+#gem 'pg', '~> 1.2', '>= 1.2.3'
 end
 #testing

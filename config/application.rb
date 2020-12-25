@@ -17,6 +17,8 @@ Bundler.require(*Rails.groups)
 
 module BeatsByRails
   class Application < Rails::Application
+    config.load_defaults 5.1
+
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
@@ -31,6 +33,21 @@ module BeatsByRails
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     #config.active_record.raise_in_transactional_callbacks = true
+
+    config.api_only = true
+
+   config.middleware.insert_before 0, Rack::Cors do
+     allow do
+       origins '*'
+       resource(
+         '*',
+         headers: :any,
+         methods: [:get, :patch, :put, :delete, :post, :options]
+         )
+     end
+   end
+
+
     config.assets.paths << Rails.root.join("app", "assets", "fonts")
 
   end

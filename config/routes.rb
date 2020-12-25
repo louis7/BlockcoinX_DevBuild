@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   get '/', to: 'searches#search'
+  get '/api', to: 'api#search'
+
   #post '/guests', to: 'guests#create', as: 'guests_creation'
   #get '/guests', to: 'guests#new'
   # Example of regular route:
