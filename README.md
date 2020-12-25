@@ -9,17 +9,23 @@ These instructions will get you a copy of the project up and running on your loc
 
 
 ### On your local machine do:
-
+```
   $ bundle install
   $ Rails db: migrate
+```
 
 #### Need Axios for Api request:
+```
   $ yarn add axios
   $ npm install axios
+```
 
 #### need numeral for number configurations:
+```
   $ yarn add numeral
   $ npm install numeral
+```
+
 
 
 ## Built With:
