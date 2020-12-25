@@ -11,7 +11,7 @@ These instructions will get you a copy of the project up and running on your loc
 ### On your local machine do:
 ```
   $ bundle install
-  $ Rails db: migrate
+  $ Rails db:migrate
 ```
 
 #### Need Axios for Api request:
@@ -24,6 +24,10 @@ These instructions will get you a copy of the project up and running on your loc
 ```
   $ yarn add numeral
   $ npm install numeral
+```
+#### Then launch the app:
+```
+  $ rails s
 ```
 
 
