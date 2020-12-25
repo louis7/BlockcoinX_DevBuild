@@ -1,7 +1,7 @@
 
 # BlockcoinX (DevBuild)
 
-Currently this is a crypto price index and news web app. Future features will allow you 
+Currently this is a crypto price index and news web app. Future features will allow you
 to hold your crypto currencies in one easy wallet and spend it at a crypto app store.
 ## Getting Started
 
@@ -10,16 +10,16 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### On your local machine do:
 
-bundle install
-Rails db: migrate
+* bundle install
+* Rails db: migrate
 
 #### Need Axios for Api request:
-yarn add axios
-npm install axios
+* yarn add axios
+* npm install axios
 
 #### need numeral for number configurations:
-yarn add numeral
-npm install numeral
+* yarn add numeral
+* npm install numeral
 
 
 ## Built With:
